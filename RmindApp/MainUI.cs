@@ -7,14 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace RmindApp
 {
     public partial class MainUI : Form
     {
         Entry entry = new Entry();
-        public string dateReminder = DateTime.Now.ToString("dd-MM-yyyy");
-        public string dateExpired = DateTime.Now.ToString("dd-MM-yyyy");
+        public DateTime dateReminder = DateTime.Now;
+        public DateTime dateExpired = DateTime.Now;
+        public static string searchtext = "";
         public MainUI()
         {
             InitializeComponent();
@@ -94,7 +96,6 @@ namespace RmindApp
             chkFNB.Checked = false;
             chkMed.Checked = false;
             chkOthers.Checked = false;
-            //pbPic.Image.Dispose();
             dtpExpired.Value = DateTime.Now;
             dtpReminder.Value = DateTime.Now;
         }
@@ -106,12 +107,12 @@ namespace RmindApp
 
         private void dtpExpired_ValueChanged(object sender, EventArgs e)
         {
-            dateExpired = dtpExpired.Value.ToString("dd-MM-yyyy");
+            dateExpired = dtpExpired.Value;
         }
 
         private void dtpReminder_ValueChanged(object sender, EventArgs e)
         {
-            dateReminder = dtpReminder.Value.ToString("dd-MM-yyyy");
+            dateReminder = dtpReminder.Value;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -120,10 +121,21 @@ namespace RmindApp
             entry.reminderDate = dateReminder;
             entry.expiredDate = dateExpired;
             entry.note = rtbNotes.Text;
-            //pbPic.Image
 
+            string strConnect = @"Database=ReminderList;Data Source=NRWFEBRIANI;Initial Catalog=ReminderList;Integrated Security=true";
+            SqlConnection conn = new SqlConnection(strConnect);
+            conn.Open();
+            string CommandText;
+            CommandText = "INSERT INTO Reminders (Title,[Expired Date], [Reminder Date], Category, Notes) VALUES (@Title, @Expired_Date, @Reminder_Date, @Category, @Notes)";
+            SqlCommand command = new SqlCommand(CommandText, conn);
 
-            //add to database
+            command.Parameters.AddWithValue("@Title", tbTitle.Text);
+            command.Parameters.AddWithValue("@Expired_Date", dtpExpired.Text);
+            command.Parameters.AddWithValue("@Reminder_Date", dtpReminder.Text);
+            command.Parameters.AddWithValue("@Category", entry.reminderCategory);
+            command.Parameters.AddWithValue("@Notes", rtbNotes.Text);
+            command.ExecuteNonQuery();
+            conn.Close();
 
             MessageBox.Show("Reminder saved!");
             tbTitle.Text = "";
@@ -133,7 +145,6 @@ namespace RmindApp
             chkFNB.Checked = false;
             chkMed.Checked = false;
             chkOthers.Checked = false;
-            //pbPic.Image.Dispose();
             dtpExpired.Value = DateTime.Now;
             dtpReminder.Value = DateTime.Now;
         }
@@ -141,11 +152,11 @@ namespace RmindApp
 
             private void btnChoose_Click(object sender, EventArgs e)
         {
-            openFile.ShowDialog();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            searchtext = tbSearch.Text;
             SearchForm searchForm = new SearchForm();
             searchForm.Show();
         }
@@ -157,6 +168,11 @@ namespace RmindApp
         }
 
         private void openFile_FileOk(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void MainUI_Load(object sender, EventArgs e)
         {
 
         }

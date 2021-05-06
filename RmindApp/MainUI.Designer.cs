@@ -29,6 +29,7 @@ namespace RmindApp
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,11 +43,8 @@ namespace RmindApp
             this.chkBeauty = new System.Windows.Forms.CheckBox();
             this.chkFNB = new System.Windows.Forms.CheckBox();
             this.chkDoc = new System.Windows.Forms.CheckBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.chkOthers = new System.Windows.Forms.CheckBox();
-            this.pbPic = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.btnChoose = new System.Windows.Forms.Button();
             this.rtbNotes = new System.Windows.Forms.RichTextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
@@ -54,8 +52,10 @@ namespace RmindApp
             this.tbSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnViewAll = new System.Windows.Forms.Button();
-            this.openFile = new System.Windows.Forms.OpenFileDialog();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPic)).BeginInit();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -64,9 +64,9 @@ namespace RmindApp
             this.label1.Font = new System.Drawing.Font("Bebas Neue", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(266, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 40);
+            this.label1.Size = new System.Drawing.Size(101, 40);
             this.label1.TabIndex = 0;
-            this.label1.Text = "r m i nd";
+            this.label1.Text = "r m i n d";
             // 
             // label2
             // 
@@ -107,7 +107,7 @@ namespace RmindApp
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(25, 394);
+            this.label6.Location = new System.Drawing.Point(25, 280);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(38, 15);
             this.label6.TabIndex = 5;
@@ -180,16 +180,6 @@ namespace RmindApp
             this.chkDoc.UseVisualStyleBackColor = true;
             this.chkDoc.CheckedChanged += new System.EventHandler(this.chkDoc_CheckedChanged);
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(23, 274);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(40, 15);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Image";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
-            // 
             // chkOthers
             // 
             this.chkOthers.AutoSize = true;
@@ -201,15 +191,6 @@ namespace RmindApp
             this.chkOthers.UseVisualStyleBackColor = true;
             this.chkOthers.CheckedChanged += new System.EventHandler(this.chkOthers_CheckedChanged);
             // 
-            // pbPic
-            // 
-            this.pbPic.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.pbPic.Location = new System.Drawing.Point(141, 274);
-            this.pbPic.Name = "pbPic";
-            this.pbPic.Size = new System.Drawing.Size(122, 98);
-            this.pbPic.TabIndex = 15;
-            this.pbPic.TabStop = false;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -219,19 +200,9 @@ namespace RmindApp
             this.label8.TabIndex = 16;
             this.label8.Text = "Enter title:";
             // 
-            // btnChoose
-            // 
-            this.btnChoose.Location = new System.Drawing.Point(287, 274);
-            this.btnChoose.Name = "btnChoose";
-            this.btnChoose.Size = new System.Drawing.Size(97, 23);
-            this.btnChoose.TabIndex = 17;
-            this.btnChoose.Text = "Choose File";
-            this.btnChoose.UseVisualStyleBackColor = true;
-            this.btnChoose.Click += new System.EventHandler(this.btnChoose_Click);
-            // 
             // rtbNotes
             // 
-            this.rtbNotes.Location = new System.Drawing.Point(141, 394);
+            this.rtbNotes.Location = new System.Drawing.Point(141, 280);
             this.rtbNotes.Name = "rtbNotes";
             this.rtbNotes.Size = new System.Drawing.Size(243, 96);
             this.rtbNotes.TabIndex = 18;
@@ -239,7 +210,7 @@ namespace RmindApp
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(21, 519);
+            this.btnSave.Location = new System.Drawing.Point(21, 405);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(100, 23);
             this.btnSave.TabIndex = 19;
@@ -249,7 +220,7 @@ namespace RmindApp
             // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(158, 519);
+            this.btnReset.Location = new System.Drawing.Point(158, 405);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(75, 23);
             this.btnReset.TabIndex = 20;
@@ -259,7 +230,7 @@ namespace RmindApp
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(276, 518);
+            this.btnExit.Location = new System.Drawing.Point(276, 404);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 21;
@@ -294,16 +265,11 @@ namespace RmindApp
             this.btnViewAll.UseVisualStyleBackColor = true;
             this.btnViewAll.Click += new System.EventHandler(this.btnViewAll_Click);
             // 
-            // openFile
-            // 
-            this.openFile.FileName = "openFileDialog1";
-            this.openFile.FileOk += new System.ComponentModel.CancelEventHandler(this.openFile_FileOk);
-            // 
             // MainUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(641, 563);
+            this.ClientSize = new System.Drawing.Size(641, 447);
             this.Controls.Add(this.btnViewAll);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.tbSearch);
@@ -311,11 +277,8 @@ namespace RmindApp
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.rtbNotes);
-            this.Controls.Add(this.btnChoose);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.pbPic);
             this.Controls.Add(this.chkOthers);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.chkDoc);
             this.Controls.Add(this.chkFNB);
             this.Controls.Add(this.chkBeauty);
@@ -331,7 +294,9 @@ namespace RmindApp
             this.Controls.Add(this.label1);
             this.Name = "MainUI";
             this.Text = "MainUI";
-            ((System.ComponentModel.ISupportInitialize)(this.pbPic)).EndInit();
+            this.Load += new System.EventHandler(this.MainUI_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -352,11 +317,8 @@ namespace RmindApp
         private System.Windows.Forms.CheckBox chkBeauty;
         private System.Windows.Forms.CheckBox chkFNB;
         private System.Windows.Forms.CheckBox chkDoc;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.CheckBox chkOthers;
-        private System.Windows.Forms.PictureBox pbPic;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button btnChoose;
         private System.Windows.Forms.RichTextBox rtbNotes;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnReset;
@@ -365,7 +327,8 @@ namespace RmindApp
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnViewAll;
         private System.Windows.Forms.TextBox tbSearch;
-        private System.Windows.Forms.OpenFileDialog openFile;
+        private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.BindingSource bindingSource2;
     }
 }
 

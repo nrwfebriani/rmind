@@ -9,10 +9,9 @@ namespace RmindApp
     class Entry
     {
         public string title { get; set; }
-        public string expiredDate { get; set; }
-        public string reminderDate { get; set; }
+        public DateTime expiredDate { get; set; }
+        public DateTime reminderDate { get; set; }
         public string reminderCategory { get; set; }
-        public int photo { get; set; }
         public string note { get; set; }
     }
 }
