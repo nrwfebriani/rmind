@@ -1,5 +1,4 @@
 # rmind
-Codes are in master branch.
 
 Class Diagram:
 ![CASE1-Class](https://user-images.githubusercontent.com/72687883/117364883-acd1ac00-aee8-11eb-8151-6a8bd3fddfb5.png)
