@@ -28,6 +28,7 @@
     <None Update="ReminderList.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>ReminderList.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 

@@ -29,61 +29,28 @@ namespace RmindApp
 
         private void chkMed_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkMed.Checked == true)
-            {
-                chkBeauty.Checked = false;
-                chkDoc.Checked = false;
-                chkFNB.Checked = false;
-                chkOthers.Checked = false;
-                entry.reminderCategory = "Medication";
-            }
         }
 
         private void chkBeauty_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkBeauty.Checked == true)
-            {
-                chkMed.Checked = false;
-                chkDoc.Checked = false;
-                chkFNB.Checked = false;
-                chkOthers.Checked = false;
-                entry.reminderCategory = "Beauty product";
-            }
         }
 
         private void chkFNB_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkFNB.Checked == true)
-            {
-                chkBeauty.Checked = false;
-                chkDoc.Checked = false;
-                chkMed.Checked = false;
-                chkOthers.Checked = false;
-                entry.reminderCategory = "Food-Beverages";
-            }
         }
 
         private void chkDoc_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkDoc.Checked == true)
-            {
-                chkBeauty.Checked = false;
-                chkMed.Checked = false;
-                chkFNB.Checked = false;
-                chkOthers.Checked = false;
-                entry.reminderCategory = "Document";
-            }
         }
 
         private void chkOthers_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkOthers.Checked == true)
+        }
+        private void GetCategory(RadioButton rb)
+        {
+            if (rb.Checked)
             {
-                chkBeauty.Checked = false;
-                chkDoc.Checked = false;
-                chkFNB.Checked = false;
-                chkMed.Checked = false;
-                entry.reminderCategory = "Others";
+                entry.reminderCategory = rb.Text;
             }
         }
 
@@ -91,11 +58,11 @@ namespace RmindApp
         {
             tbTitle.Text = "";
             rtbNotes.Text = "";
-            chkBeauty.Checked = false;
-            chkDoc.Checked = false;
-            chkFNB.Checked = false;
-            chkMed.Checked = false;
-            chkOthers.Checked = false;
+            rbOthers.Checked = false;
+            rbMed.Checked = false;
+            rbFNB.Checked = false;
+            rbDoc.Checked = false;
+            rbBeauty.Checked = false;
             dtpExpired.Value = DateTime.Now;
             dtpReminder.Value = DateTime.Now;
         }
@@ -122,6 +89,12 @@ namespace RmindApp
             entry.expiredDate = dateExpired;
             entry.note = rtbNotes.Text;
 
+            GetCategory(rbBeauty);
+            GetCategory(rbDoc);
+            GetCategory(rbFNB);
+            GetCategory(rbMed);
+            GetCategory(rbOthers);
+
             string strConnect = @"Database=ReminderList;Data Source=NRWFEBRIANI;Initial Catalog=ReminderList;Integrated Security=true";
             SqlConnection conn = new SqlConnection(strConnect);
             conn.Open();
@@ -140,11 +113,6 @@ namespace RmindApp
             MessageBox.Show("Reminder saved!");
             tbTitle.Text = "";
             rtbNotes.Text = "";
-            chkBeauty.Checked = false;
-            chkDoc.Checked = false;
-            chkFNB.Checked = false;
-            chkMed.Checked = false;
-            chkOthers.Checked = false;
             dtpExpired.Value = DateTime.Now;
             dtpReminder.Value = DateTime.Now;
         }
@@ -156,14 +124,11 @@ namespace RmindApp
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            searchtext = tbSearch.Text;
-            SearchForm searchForm = new SearchForm();
-            searchForm.Show();
         }
 
         private void btnViewAll_Click(object sender, EventArgs e)
         {
-            ViewAllForm viewAllForm = new ViewAllForm();
+            SearchForm viewAllForm = new SearchForm();
             viewAllForm.Show();
         }
 

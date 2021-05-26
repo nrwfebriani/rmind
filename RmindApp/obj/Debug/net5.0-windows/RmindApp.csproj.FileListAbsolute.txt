@@ -47,3 +47,4 @@ D:\codes\pbo\RmindApp\RmindApp\bin\Debug\net5.0-windows\runtimes\unix\lib\netcor
 D:\codes\pbo\RmindApp\RmindApp\bin\Debug\net5.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 D:\codes\pbo\RmindApp\RmindApp\obj\Debug\net5.0-windows\RmindApp.csproj.CopyComplete
 D:\codes\pbo\RmindApp\RmindApp\obj\Debug\net5.0-windows\RmindApp.genruntimeconfig.cache
+D:\codes\pbo\RmindApp\RmindApp\bin\Debug\net5.0-windows\ReminderList.xsd
