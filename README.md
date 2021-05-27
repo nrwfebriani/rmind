@@ -1,7 +1,7 @@
 # rmind
 
 Class Diagram:
-![CASE1-Class](https://user-images.githubusercontent.com/72687883/117364883-acd1ac00-aee8-11eb-8151-6a8bd3fddfb5.png)
+![CASE1-Class](https://user-images.githubusercontent.com/72687883/119759490-8e047b00-bed2-11eb-8e27-14b23f2814e9.png)
 
 Database Diagram:
 
