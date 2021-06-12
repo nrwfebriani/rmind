@@ -52,6 +52,7 @@ namespace RmindApp
             this.rbFNB = new System.Windows.Forms.RadioButton();
             this.rbBeauty = new System.Windows.Forms.RadioButton();
             this.rbOthers = new System.Windows.Forms.RadioButton();
+            this.btnNotification = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -266,11 +267,23 @@ namespace RmindApp
             this.rbOthers.Text = "Others";
             this.rbOthers.UseVisualStyleBackColor = true;
             // 
+            // btnNotification
+            // 
+            this.btnNotification.Font = new System.Drawing.Font("Wingdings", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnNotification.Location = new System.Drawing.Point(25, 12);
+            this.btnNotification.Name = "btnNotification";
+            this.btnNotification.Size = new System.Drawing.Size(38, 36);
+            this.btnNotification.TabIndex = 29;
+            this.btnNotification.Text = "%";
+            this.btnNotification.UseVisualStyleBackColor = true;
+            this.btnNotification.Click += new System.EventHandler(this.btnNotification_Click);
+            // 
             // MainUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(402, 468);
+            this.Controls.Add(this.btnNotification);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnViewAll);
             this.Controls.Add(this.btnExit);
@@ -322,6 +335,7 @@ namespace RmindApp
         private System.Windows.Forms.RadioButton rbFNB;
         private System.Windows.Forms.RadioButton rbBeauty;
         private System.Windows.Forms.RadioButton rbOthers;
+        private System.Windows.Forms.Button btnNotification;
     }
 }
 

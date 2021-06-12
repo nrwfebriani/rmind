@@ -1,22 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace RmindApp
 {
     public partial class MainUI : Form
     {
+        SqlConnection conn = new SqlConnection(@"Database=ReminderList;Data Source=NRWFEBRIANI;Initial Catalog=ReminderList;Integrated Security=true");
+        SqlCommand command;
         Entry entry = new Entry();
         public DateTime dateReminder = DateTime.Now;
         public DateTime dateExpired = DateTime.Now;
         public static string searchtext = "";
+        public static string title2, dater2, datex2, category2, note2;
         public MainUI()
         {
             InitializeComponent();
@@ -71,12 +67,8 @@ namespace RmindApp
             GetCategory(rbMed);
             GetCategory(rbOthers);
 
-            string strConnect = @"Database=ReminderList;Data Source=NRWFEBRIANI;Initial Catalog=ReminderList;Integrated Security=true";
-            SqlConnection conn = new SqlConnection(strConnect);
             conn.Open();
-            string CommandText;
-            CommandText = "INSERT INTO Reminders (Title,[Expired Date], [Reminder Date], Category, Notes) VALUES (@Title, @Expired_Date, @Reminder_Date, @Category, @Notes)";
-            SqlCommand command = new SqlCommand(CommandText, conn);
+            command = new SqlCommand("INSERT INTO Reminders(Title,[Expired Date], [Reminder Date], Category, Notes) VALUES(@Title, @Expired_Date, @Reminder_Date, @Category, @Notes)", conn);
 
             command.Parameters.AddWithValue("@Title", tbTitle.Text);
             command.Parameters.AddWithValue("@Expired_Date", dtpExpired.Text);
@@ -97,6 +89,25 @@ namespace RmindApp
         {
             SearchForm viewAllForm = new SearchForm();
             viewAllForm.Show();
+        }
+
+        private void btnNotification_Click(object sender, EventArgs e)
+        {
+            Notification notiForm = new Notification();
+            notiForm.Show();
+            //if (dateReminder == DateTime.Now)
+            //{
+            //    MessageBox.Show("Reminder for today:\nTitle: " + dataReader["Title"].ToString());
+
+            //}
+            //else if (dateExpired == DateTime.Now)
+            //{
+            //    MessageBox.Show("expired for today.");
+            //}
+            //else
+            //{
+            //    MessageBox.Show("There is no reminder for today.");
+            //}
         }
     }
 }

@@ -18,7 +18,6 @@ C:\Users\WINDOWS\source\repos\RmindApp\RmindApp\obj\Debug\net5.0-windows\RmindAp
 C:\Users\WINDOWS\source\repos\RmindApp\RmindApp\obj\Debug\net5.0-windows\ref\RmindApp.dll
 C:\Users\WINDOWS\source\repos\RmindApp\RmindApp\obj\Debug\net5.0-windows\RmindApp.pdb
 C:\Users\WINDOWS\source\repos\RmindApp\RmindApp\obj\Debug\net5.0-windows\RmindApp.genruntimeconfig.cache
-D:\codes\pbo\RmindApp\RmindApp\obj\Debug\net5.0-windows\RmindApp.csprojAssemblyReference.cache
 D:\codes\pbo\RmindApp\RmindApp\obj\Debug\net5.0-windows\RmindApp.MainUI.resources
 D:\codes\pbo\RmindApp\RmindApp\obj\Debug\net5.0-windows\RmindApp.SearchForm.resources
 D:\codes\pbo\RmindApp\RmindApp\obj\Debug\net5.0-windows\RmindApp.ViewAllForm.resources
@@ -48,3 +47,5 @@ D:\codes\pbo\RmindApp\RmindApp\bin\Debug\net5.0-windows\runtimes\win\lib\netcore
 D:\codes\pbo\RmindApp\RmindApp\obj\Debug\net5.0-windows\RmindApp.csproj.CopyComplete
 D:\codes\pbo\RmindApp\RmindApp\obj\Debug\net5.0-windows\RmindApp.genruntimeconfig.cache
 D:\codes\pbo\RmindApp\RmindApp\bin\Debug\net5.0-windows\ReminderList.xsd
+D:\codes\pbo\RmindApp\RmindApp\obj\Debug\net5.0-windows\RmindApp.csproj.AssemblyReference.cache
+D:\codes\pbo\RmindApp\RmindApp\obj\Debug\net5.0-windows\RmindApp.Notification.resources
