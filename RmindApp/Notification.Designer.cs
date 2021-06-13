@@ -42,6 +42,7 @@ namespace RmindApp
             this.dgvNotification.RowTemplate.Height = 25;
             this.dgvNotification.Size = new System.Drawing.Size(652, 414);
             this.dgvNotification.TabIndex = 4;
+            this.dgvNotification.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvNotification_RowHeaderMouseClick);
             // 
             // Notification
             // 

@@ -95,19 +95,6 @@ namespace RmindApp
         {
             Notification notiForm = new Notification();
             notiForm.Show();
-            //if (dateReminder == DateTime.Now)
-            //{
-            //    MessageBox.Show("Reminder for today:\nTitle: " + dataReader["Title"].ToString());
-
-            //}
-            //else if (dateExpired == DateTime.Now)
-            //{
-            //    MessageBox.Show("expired for today.");
-            //}
-            //else
-            //{
-            //    MessageBox.Show("There is no reminder for today.");
-            //}
         }
     }
 }
