@@ -12,7 +12,6 @@ namespace RmindApp
         public DateTime dateReminder = DateTime.Now;
         public DateTime dateExpired = DateTime.Now;
         public static string searchtext = "";
-        public static string title2, dater2, datex2, category2, note2;
         public MainUI()
         {
             InitializeComponent();
