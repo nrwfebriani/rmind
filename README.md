@@ -14,7 +14,7 @@ basis windows form agar notifikasi dapat muncul ketika pengguna sedang menggunak
 Untuk fitur yang kami tawarkan pada aplikasi ini adalah:
 
 1. User akan diminta untuk menambahkan entry baru. User dapat memberi nama sesuai dengan barang apa yang ingin di-input, kemudian memilih kategori barang tersebut, seperti makanan, minuman, obat-obatan, produk kecantikan, serta dokumen. 
-2. Pengguna kemudian memasukkan tanggal kadaluwarsa barang tersebut dan memilih tanggal dan jam pengingat yang diinginkan.
+2. Pengguna kemudian memasukkan tanggal kadaluwarsa barang tersebut dan memilih tanggal pengingat yang diinginkan.
 3. Pengguna juga dapat menambahkan catatan pada entry apabila diinginkan. 
 4. Setelah selesai dan tersimpan, pengguna bisa melihat daftar entry yang sudah dimasukkan. 
 5. Pengguna juga dapat melakukan pengurutan berdasarkan nama, tanggal kadaluwarsa terdekat, serta kategori. 
